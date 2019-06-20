@@ -1,9 +1,10 @@
-lazy val root = (project in file("."))
-  .enablePlugins(PlayScala)
-  .settings(
-    organization := "com.futurice",
-    name := "minimal-play2",
-    version := "1.3.0",
-    scalaVersion := "2.12.3",
-    libraryDependencies += guice,
-  )
+name := "minimal-play-app"
+organization := "com.example"
+version := "0.1"
+
+lazy val root = (project in file(".")).enablePlugins(PlayScala)
+
+libraryDependencies ++= Seq(
+  guice,
+  "org.scalatestplus.play" %% "scalatestplus-play" % "4.0.2" % Test
+)
